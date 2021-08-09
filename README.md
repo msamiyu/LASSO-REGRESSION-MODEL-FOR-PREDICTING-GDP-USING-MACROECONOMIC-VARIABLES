@@ -77,7 +77,7 @@ From the output above, the r-square (73.2%) shows that about 73% of our test mac
 
 **Conclusion**
 
-In this short essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used a machine learning approach of Lasso regression to continue work in Part1 when we evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significant level. The Lasso regression model appears to be a suitable regularization technique that helps overcome the multicollinearity effect in the linear regression base model by forcing some parameters to zero and help us with feature selection. The r-squared obtained seems more reliable, and the RMSE for both train and test data gave a minimal prediction error. In contrast, the machine learning approach helps in prediction accuracy.
+In this short essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used a machine learning approach of Lasso regression to continue work in Part1 when we evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significant level. The Lasso regression model appears to be a suitable regularization technique that helps overcome the multicollinearity effect in the linear regression base model by forcing some parameters to zero and help us with feature selection. The r-squared obtained seems more reliable, and the RMSE for both train and test data gave a minimal prediction error. It also prevents overfitting that might have ocurred in the regression model output. In contrast, the machine learning approach helps in prediction accuracy.
 
 **References**
 
