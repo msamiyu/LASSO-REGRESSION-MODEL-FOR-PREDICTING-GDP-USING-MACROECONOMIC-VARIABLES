@@ -29,3 +29,62 @@ The Lasso regression model is of the form;
 
 ![image](https://user-images.githubusercontent.com/54149747/128662755-5a09440f-8547-48cd-990a-83e4f6d80b81.png)
 
+   **Note:**
+   
+    * The hyperparameter λ is tuned to get the optimal lambda value which is used to build the Lasso regression model
+    
+    * The “glmnet” library used in R to compute the optimal lambda uses alpha by default to represent lambda in (1) above. 
+
+    * For Lasso regression, alpha is set as 1 for the “glmnet” library computation purpose.
+ 
+**Model Validation:**
+
+**Cross-Validation (CV):** The dataset is split into train Set (70% of original data) and test Set (30%). The model was trained on the training set and then tested on the test set. 
+To ensure that every observation/record in the original dataset can appear in the train and test set, we apply K-Fold CV.  
+
+**Model performance:** The performance of the model shall be based on the following metrics:
+
+**R-Square** – It is a relative measure of fit that shows how variance in the model corresponds to the total variance. A higher R-Square indicates a better fit for our regression model.
+**RMSE**(Root Mean Square Error) –  It is an absolute measure of fit that shows the standard deviation of the variance not explained by the model. A lower RMSE indicates a better fit for our regression model.
+
+## Result
+
+**Optimal lambda:** After performing 10-folds cross validation on the train-data, the optimal lambda value obtained that minimizes the mean-square error (MSE) is;
+
+![image](https://user-images.githubusercontent.com/54149747/128663226-0070f89f-a3b7-4c94-a9f0-e3adb9d11741.png)
+
+The plot of train MSE by the optimal value is shown below;
+
+![image](https://user-images.githubusercontent.com/54149747/128663268-4462f94c-af9f-4d3e-81d0-f80487deb857.png)
+
+**Important independent variables:**  The output below shows the independent variables that are more important for prediction (values displayed) and those whose coefficients would be shrunk, and the Lasso model will remove their predictors. The output shows that the interest rate (INTDSRUSM193) and the inflation rate (T10YIE) variables are shrunk and removed by the Lasso model.
+
+![image](https://user-images.githubusercontent.com/54149747/128663328-be92845a-3023-4bfe-9d0f-22ed907c0f69.png)
+
+**Model performance:** 
+
+**Train Data:**
+
+![image](https://user-images.githubusercontent.com/54149747/128663350-c8455568-ed42-4cfa-9786-3c07ef0721ae.png)
+
+From the output above, the r-square (88.8%) shows that about 89% of our trained macroeconomic data fits the Lasso regression model. While the RMSE (0.0114) indicates that        about 1.1% of variance is not explained by our model.
+
+**Test Data:**
+
+![image](https://user-images.githubusercontent.com/54149747/128663391-d03d0a74-9039-4ebe-a87d-4a1fbf06d78a.png)
+
+From the output above, the r-square (73.2%) shows that about 73% of our test macroeconomic data fits the Lasso regression model. While the RMSE (0.018) indicates that about      1.2% of variance is not explained by our model.
+
+**Conclusion**
+
+In this short essay, we examined how GDP could be predicted using other macroeconomic variables. To achieve this objective, we used a machine learning approach of Lasso regression to continue work in Part1 when we evaluated how each additional variable impacted our regression fit by comparing the VIF’s and the p-values at a 5% significant level. The Lasso regression model appears to be a suitable regularization technique that helps overcome the multicollinearity effect in the linear regression base model by forcing some parameters to zero and help us with feature selection. The r-squared obtained seems more reliable, and the RMSE for both train and test data gave a minimal prediction error. In contrast, the machine learning approach helps in prediction accuracy.
+
+**References**
+
+•	FRED Economic Data: https://fred.stlouisfed.org/series
+
+•	Deepika Singh: https://www.pluralsight.com/guides/linear-lasso-and-ridge-regression-with-r
+
+
+
+
