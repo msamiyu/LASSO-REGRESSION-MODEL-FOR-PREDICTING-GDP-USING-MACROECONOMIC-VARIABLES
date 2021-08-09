@@ -27,7 +27,7 @@ Model:
 
 The Lasso regression model is of the form;
 
-![image](https://user-images.githubusercontent.com/54149747/128662755-5a09440f-8547-48cd-990a-83e4f6d80b81.png)
+![image](https://user-images.githubusercontent.com/54149747/128662755-5a09440f-8547-48cd-990a-83e4f6d80b81.png)         (1)
 
    **Note:**
    
